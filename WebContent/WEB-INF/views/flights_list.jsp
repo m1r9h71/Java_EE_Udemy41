@@ -86,6 +86,11 @@
 		 
 		 </tr>
 		 
+		 <tr>
+		 
+		 <td colspan="8">No Passengers on this flight yet.</td>
+		 </tr>
+		 
 		<%
 			}
 		 %>

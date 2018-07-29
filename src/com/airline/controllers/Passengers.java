@@ -39,19 +39,15 @@ public class Passengers extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		List<Passenger> pList = (List<Passenger>) ps.getPassengers();
 		
-		request.setAttribute("passenger_list", pList);
+		request.setAttribute("passengers_list", pList);
 		
-		PrintWriter out = response.getWriter();
-		out.println("The Passenger List will be displayed here: ");
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/passengers_list.jsp");
 		
-		//RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/passengers_list.jsp");
-		
-		//view.forward(request, response);
+		view.forward(request, response);
+			
 	}
 
 	/**
@@ -59,7 +55,6 @@ public class Passengers extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
